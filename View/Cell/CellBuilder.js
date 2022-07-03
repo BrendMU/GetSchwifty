@@ -4,7 +4,12 @@ class CellBuilder
     {
         let div = document.createElement("div");
         div.classList.add("cell");
-        div.textContent = content;
+
+        if(content)
+        {
+            div.textContent = content;
+        }
+        
         return div;
     }
 }

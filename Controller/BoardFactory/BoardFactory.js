@@ -8,7 +8,7 @@ class BoardFactory
 
     createBoard(boardType, size)
     {
-        let possibleNumbers = Array.from({length: size * size}, (_, i) => i + 1);
+        let possibleNumbers = Array.from(Array(size * size).keys())
         let randomizedNumbers = this.shuffle(possibleNumbers);
         let boardArray = [];
 
