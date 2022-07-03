@@ -2,13 +2,15 @@ class BoardValidator
 {
     validateBoard(board)
     {
+        console.log("validating");
         let count = 0;
 
-        for(let i = 0; row < board.size; i++)
+        for(let i = 0; i < board.size; i++)
         {
             for(let j = 0; j < board.size; j++)
             {
                 count += this.countOpposites(board, i, j);
+                console.log(count);
             }
         }
 
@@ -24,25 +26,28 @@ class BoardValidator
     {
         let count = 0;
 
-        for(let i = row; row < board.size; i++)
+        for(let i = row; i < board.size; i++)
         {
-            for(let j = i == row ? column : 0; j < board.size; j++)
+            let startingColumn = i == row ? column : 0;
+            for(let j = startingColumn; j < board.size; j++)
             {
-                if(board.board[i][j] < board.board[row][column])
+                if(board.board[i * board.size + j] && board.board[i * board.size + j] < board.board[row * board.size + column])
                 {
                     count++;
                 }
             }
         }   
+
+        return count;
     }
 
     findEmptyCell(board)
     {
         for(let i = 0; i < board.size; i++)
         {
-            let columnIndex = board.board[i].indexOf(0);
+            let columnIndex = board.board.slice(i, i + board.size).indexOf(0);
 
-            if(rowIndex >= 0)
+            if(columnIndex >= 0)
             {
                 return i + 1; 
             }

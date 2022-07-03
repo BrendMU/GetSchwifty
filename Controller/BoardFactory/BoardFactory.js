@@ -1,9 +1,10 @@
 class BoardFactory
 {
-    constructor(boards, cellFactory)
+    constructor(boards, cellFactory, boardValidator)
     {
         this.boards = boards;
         this.cellFactory = cellFactory;
+        this.boardValidator = boardValidator;
     }
 
     createBoard(boardType, size)
@@ -11,6 +12,11 @@ class BoardFactory
         let possibleNumbers = Array.from(Array(size * size).keys())
         let randomizedNumbers = this.shuffle(possibleNumbers);
         let boardArray = [];
+
+        while(!this.boardValidator.validateBoard({board: randomizedNumbers, size}))
+        {
+            randomizedNumbers = this.shuffle(possibleNumbers);
+        }
 
         for(let i = 0; i < size; i++)
         {
