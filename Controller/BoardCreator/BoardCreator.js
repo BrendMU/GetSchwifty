@@ -5,7 +5,7 @@ class BoardCreator
         this.boards = boards;
     }
 
-    CreateBoard(boardType, size)
+    createBoard(boardType, size)
     {
         let boardArray = [];
 
@@ -19,6 +19,6 @@ class BoardCreator
             }
         }
 
-        return boards[boradType];
+        return boards[boardType]();
     }
 }
