@@ -1,8 +1,9 @@
-class BoardCreator
+class BoardFactory
 {
-    constructor(boards)
+    constructor(boards, cellFactory)
     {
         this.boards = boards;
+        this.cellFactory = cellFactory;
     }
 
     createBoard(boardType, size)
@@ -17,7 +18,8 @@ class BoardCreator
 
             for(let j = 0; j < size; j++)
             {
-                boardArray[i][j] = {number: randomizedNumbers[(i * size) + j], content: randomizedNumbers[(i * size) + j]}
+                let number = randomizedNumbers[i * size + j]
+                boardArray[i][j] = this.cellFactory.createCell(1, number, number);
             }
         }
 
