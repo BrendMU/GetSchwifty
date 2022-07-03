@@ -20,5 +20,7 @@ class BoardBuilder
                 board.appendChild(cell);
             }
         }
+
+        document.body.appendChild(board);
     }
 }

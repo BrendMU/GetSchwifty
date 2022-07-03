@@ -8,6 +8,7 @@ class GetBoardController
 
     getBoard(size)
     {
-        let board = this.boardCreator.createBoard(1, size)
+        let board = this.boardCreator.createBoard(1, size);
+        this.boardBuilder.buildBoard(board);
     }
 }
