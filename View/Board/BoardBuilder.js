@@ -21,6 +21,7 @@ class BoardBuilder
             }
         }
 
-        document.body.appendChild(boardDiv);
+        let boardWrapper = document.getElementsByClassName("board-wrapper")[0];
+        boardWrapper.appendChild(boardDiv);
     }
 }
