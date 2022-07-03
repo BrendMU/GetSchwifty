@@ -6,8 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Schwifty</title>
 
+    <link rel="stylesheet" href="./View/Board/Board.css">
+    <link rel="stylesheet" href="./View/Cell/Cell.css">
 </head> 
 <body>
     
 </body>
+<script src="./Controller/Board/Board.js"></script>
+<script src="./Controller/BoardCreator/BoardCreator.js"></script>
+<script src="./Controller/Controllers/GetBoardController.js"></script>
+<script src="./View/Board/BoardBuilder.js"></script>
+<script src="./View/Cell/CellBuilder.js"></script>
+<script src="./Bootstrapper.js"></script>
+<script>
+    window.addEventListener("load", () => {
+        controllers.getBoardController.getBoard(3);
+    });
+</script>
 </html>
