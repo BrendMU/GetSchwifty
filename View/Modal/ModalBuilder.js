@@ -5,7 +5,7 @@ class ModalBuilder
         let div = document.createElement("div");
 
         let paragraph = document.createElement("p");
-        paragraph.textContent = "Game Over!";
+        paragraph.textContent = "Congratulations!";
         
         let restartButton = document.createElement("div");
         restartButton.classList.add("restart-button");
