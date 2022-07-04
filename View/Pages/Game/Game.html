@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./Game.css">
+    <link rel="stylesheet" href="../../Board/Board.css">
+    <link rel="stylesheet" href="../../Cell/Cell.css">
+    <link rel="stylesheet" href="../../Modal/Modal.css">
+</head>
+<body>
+    
+</body>
+<script src="../../../Controller/Board/Board.js"></script>
+<script src="../../../Controller/BoardValidator/BoardValidator.js"></script>
+<script src="../../../Controller/BoardValidator/BoardWinValidator.js"></script>
+<script src="../../../Controller/BoardFactory/BoardFactory.js"></script>
+<script src="../../../Controller/Cell/Cell.js"></script>
+<script src="../../../Controller/CellFactory/CellFactory.js"></script>
+<script src="../../../Controller/MoveStrategy/CellMoveStrategy.js"></script>
+<script src="../../../Controller/Controllers/MakeMoveController.js"></script>
+<script src="../../../Controller/Controllers/WinCheckController.js"></script>
+<script src="../../../Controller/Controllers/GetBoardController.js"></script>
+<script src="../../../Controller/Controllers/GenerateBoardController.js"></script>
+<script src="../../Board/BoardBuilder.js"></script>
+<script src="../../Cell/CellBuilder.js"></script>
+<script src="../../Modal/ModalBuilder.js"></script>
+<script src="../../../Bootstrapper.js"></script>
+<script>
+    window.addEventListener("load", () => {
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+
+        controllers.generateBoardController.getBoard(params.size);
+});
+</script>
+</html>

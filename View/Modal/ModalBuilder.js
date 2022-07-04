@@ -12,7 +12,7 @@ class ModalBuilder
         restartButton.textContent = "Restart";
 
         restartButton.addEventListener("click", () => {
-            window.location.reload();
+            window.location.href = "../../../index.html";
         })
 
         div.appendChild(paragraph);
