@@ -12,11 +12,16 @@
 <body>
     <div class="menu">
         <h1>
-            Get Schwify
+            Get Schwifty
         </h1>
-        <a class="menu-item" href="./View/Pages/Game/Game.html?size=3">
+        <div class="input">
+            <label for="size">Enter Board Size:</label>
+            <input type="number" value="3" name="size" id="size" min="2">
+        </div>
+        <a class="menu-item" onclick="startGame()">
             Start Game
         </a>
     </div>
 </body>
+<script src="./index.js"></script>
 </html>
