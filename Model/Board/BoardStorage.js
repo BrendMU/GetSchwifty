@@ -16,4 +16,9 @@ class BoardStorage
 
         return JSON.parse(board);
     }
+
+    remove()
+    {
+        localStorage.removeItem("board");
+    }
 }

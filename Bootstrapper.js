@@ -19,7 +19,7 @@ class Bootstrapper
         let modalBuilder = new ModalBuilder();
 
         let getBoardController = new GetBoardController(board);
-        let checkWinController = new WinCheckController(board, score, boardWinValidator, modalBuilder, scoreStorage);
+        let checkWinController = new WinCheckController(board, score, boardWinValidator, modalBuilder, scoreStorage, boardStorage);
         
         let boardBuilder = new BoardBuilder(cellBuilder, makeMoveController, getBoardController, checkWinController);
         let scoreBuilder = new ScoreBuilder();

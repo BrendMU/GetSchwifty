@@ -1,12 +1,13 @@
 class WinCheckController
 {
-    constructor(board, score, boardWinValidator, modalBuilder, scoreStorage)
+    constructor(board, score, boardWinValidator, modalBuilder, scoreStorage, boardStorage)
     {
         this.board = board;
         this.boardWinValidator = boardWinValidator;
         this.modalBuilder = modalBuilder;
         this.scoreStorage = scoreStorage;
         this.score = score;
+        this.boardStorage = boardStorage;
     }
 
     checkWin()
@@ -15,6 +16,7 @@ class WinCheckController
 
         if(isGameOver)
         {
+            this.boardStorage.remove();
             this.scoreStorage.add(this.score);
             this.modalBuilder.buildModal();
         }

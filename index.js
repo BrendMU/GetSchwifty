@@ -8,10 +8,19 @@ window.addEventListener("load", () => {
     };
 })
 
-function startGame()
+function startGame(isContinue)
 {
     let sizeInput = document.getElementById("size");
     let nameInput = document.getElementById("name");
+
+    if(!isContinue)
+    {
+        localStorage.removeItem("board");
+    }
+    else if(!localStorage.getItem("board"))
+    {
+        return;
+    }
 
     if(!nameInput.value)
     {
