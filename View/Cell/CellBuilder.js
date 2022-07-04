@@ -1,6 +1,6 @@
 class CellBuilder
 {
-    buildCell(content)
+    buildCell(content, clickFunction)
     {
         let div = document.createElement("div");
         div.classList.add("cell");
@@ -9,7 +9,14 @@ class CellBuilder
         {
             div.textContent = content;
         }
-        
+
+        if(clickFunction)
+        {
+            div.addEventListener("click", () => {
+                clickFunction();
+            });
+        }
+
         return div;
     }
 }

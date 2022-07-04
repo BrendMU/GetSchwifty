@@ -10,7 +10,6 @@ class BoardValidator
             for(let j = 0; j < board.size; j++)
             {
                 count += this.countOpposites(board, i, j);
-                console.log(count);
             }
         }
 
@@ -31,7 +30,9 @@ class BoardValidator
             let startingColumn = i == row ? column : 0;
             for(let j = startingColumn; j < board.size; j++)
             {
-                if(board.board[i * board.size + j] && board.board[i * board.size + j] < board.board[row * board.size + column])
+                let isOpposite = board.board[i * board.size + j] && board.board[i * board.size + j] < board.board[row * board.size + column];
+                
+                if(isOpposite)
                 {
                     count++;
                 }
