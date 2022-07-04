@@ -11,3 +11,14 @@
 
     padding: 6em;
 }
+
+.menu-item
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #FF5733;
+
+    padding: 2em;
+}

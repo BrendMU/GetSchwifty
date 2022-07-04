@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="./View/Modal/Modal.css">
 </head> 
 <body>
+    <div class="menu">
+        <h1>
+            Get Schwify
+        </h1>
+        <a class="menu-item" href="./page">
+            Start Game
+        </a>
+    </div>
 </body>
 <script src="./Controller/Board/Board.js"></script>
 <script src="./Controller/BoardValidator/BoardValidator.js"></script>
@@ -28,9 +36,4 @@
 <script src="./View/Cell/CellBuilder.js"></script>
 <script src="./View/Modal/ModalBuilder.js"></script>
 <script src="./Bootstrapper.js"></script>
-<script>
-    window.addEventListener("load", () => {
-        controllers.generateBoardController.getBoard(3);
-    });
-</script>
 </html>
