@@ -12,17 +12,18 @@ function startGame(isContinue)
 {
     let sizeInput = document.getElementById("size");
     let nameInput = document.getElementById("name");
+    
+    if(!nameInput.value)
+    {
+        nameInput.focus();
+        return;
+    }
 
     if(!isContinue)
     {
         localStorage.removeItem("board");
     }
     else if(!localStorage.getItem("board"))
-    {
-        return;
-    }
-
-    if(!nameInput.value)
     {
         return;
     }
