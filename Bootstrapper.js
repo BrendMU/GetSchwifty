@@ -10,6 +10,7 @@ class Bootstrapper
         let boardWinValidator = new BoardWinValidator(board);
 
         let cellBuilder = new CellBuilder();
+        let modalBuilder = new ModalBuilder();
 
         let getBoardController = new GetBoardController(board);
         let checkWinController = new WinCheckController(board, boardWinValidator);
