@@ -26,8 +26,8 @@ class BoardBuilder
             {
                 let isAdjancentToEmptyCell = (i - 1 >= 0 && board.board[i - 1][j].number === 0) ||
                 (i + 1 < board.size && board.board[i + 1][j].number === 0) ||
-                (j - 1 > 0 && board.board[i][j - 1].number === 0) || 
-                (j + 1 < board.size && board.board[i][j + 1].number) === 0;
+                (j - 1 >= 0 && board.board[i][j - 1].number === 0) || 
+                (j + 1 < board.size && board.board[i][j + 1].number === 0);
                 
                 let cell = this.cellBuilder.buildCell(board.board[i][j].content, isAdjancentToEmptyCell && (() => clickFunction(i, j)));
                 boardDiv.appendChild(cell);
