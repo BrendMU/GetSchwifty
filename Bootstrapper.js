@@ -6,17 +6,19 @@ class Bootstrapper
         let score = new Score();
 
         let moveStrategy = new CellMoveStrategy();
-        let makeMoveController = new MakeMoveController(board, moveStrategy);
+        let makeMoveController = new MakeMoveController(board, score, moveStrategy);
 
         let boardWinValidator = new BoardWinValidator(board);
 
         let scoreFactory = new ScoreFactory({1: (name, moveCount, boardSize, startDate) => new Score(name, moveCount, boardSize, startDate)});
 
+        let scoreStorage = new ScoreStorage();
+
         let cellBuilder = new CellBuilder();
         let modalBuilder = new ModalBuilder();
 
         let getBoardController = new GetBoardController(board);
-        let checkWinController = new WinCheckController(board, boardWinValidator, modalBuilder);
+        let checkWinController = new WinCheckController(board, score, boardWinValidator, modalBuilder, scoreStorage);
         
         let boardBuilder = new BoardBuilder(cellBuilder, makeMoveController, getBoardController, checkWinController);
         

@@ -7,16 +7,17 @@ class ScoreStorage
 
         if(scoreStorageString)
         {
-            scoreStorage = JSON.parse(scoreStorage);
+            scoreStorage = JSON.parse(scoreStorageString);
         }
 
         scoreStorage.push(score);
         scoreStorage.sort(function (a, b) { return a.moveCount - b.moveCount });
+        scoreStorage = scoreStorage.slice(0, 5);
         localStorage.setItem("scores", JSON.stringify(scoreStorage));
     }
 
     getAll()
     {
-        return JSON.parse(localStorage.getItem("scores"));
+        return JSON.parse(localStorage.getItem("scores"))
     }
 }

@@ -12,11 +12,10 @@ class GenerateBoardController
     getBoard(size, name)
     {
         let newBoard = this.boardCreator.createBoard(1, size);
-        this.board.size = newBoard.size;
-        this.board.board = newBoard.board;
+        Object.assign(this.board, newBoard);
 
         let newScore = this.scoreFactory.createScore(1, name, 0, newBoard.size, new Date().toISOString().slice(0, 10))
-        this.score = JSON.parse(JSON.stringify(newScore));
+        Object.assign(this.score, newScore);
 
         this.boardBuilder.buildBoard(this.board);
     }
