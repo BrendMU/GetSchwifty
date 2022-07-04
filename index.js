@@ -11,6 +11,7 @@ window.addEventListener("load", () => {
 function startGame()
 {
     let sizeInput = document.getElementById("size");
+    let nameInput = document.getElementById("name");
 
-    window.location.href = `./View/Pages/Game/Game.html?size=${sizeInput.value}`;
+    window.location.href = `./View/Pages/Game/Game.html?size=${sizeInput.value}&name=${nameInput.value}`;
 }

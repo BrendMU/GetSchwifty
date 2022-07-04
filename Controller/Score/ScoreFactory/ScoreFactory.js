@@ -7,6 +7,6 @@ class ScoreFactory
 
     createScore(scoreType, name, moveCount, boardSize, startDate)
     {
-        this.scores[scoreType](name, moveCount, boardSize, startDate)
+        return this.scores[scoreType](name, moveCount, boardSize, startDate)
     }
 }

@@ -5,6 +5,7 @@ class GenerateBoardController
         this.board = board;
         this.boardCreator = boardCreator;
         this.boardBuilder = boardBuilder;
+        this.scoreFactory = scoreFactory;
         this.score = score
     }
 
@@ -15,9 +16,8 @@ class GenerateBoardController
         this.board.board = newBoard.board;
 
         let newScore = this.scoreFactory.createScore(1, name, 0, newBoard.size, new Date().toISOString().slice(0, 10))
-
         this.score = JSON.parse(JSON.stringify(newScore));
-        console.log(this.score);
+
         this.boardBuilder.buildBoard(this.board);
     }
 }
