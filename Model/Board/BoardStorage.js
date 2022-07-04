@@ -7,6 +7,13 @@ class BoardStorage
 
     get()
     {
-        return JSON.parse(localStorage.getItem("board"));
+        let board = localStorage.getItem("board");
+
+        if(!board)
+        {
+            return;
+        }
+
+        return JSON.parse(board);
     }
 }
