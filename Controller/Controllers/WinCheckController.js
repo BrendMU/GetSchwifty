@@ -1,19 +1,19 @@
 class WinCheckController
 {
-    constructor(board, boardWinValidator)
+    constructor(board, boardWinValidator, modalBuilder)
     {
         this.board = board;
         this.boardWinValidator = boardWinValidator;
+        this.modalBuilder = modalBuilder;
     }
 
     checkWin()
     {
         let isGameOver = this.boardWinValidator.checkWin();
-        console.log(isGameOver);
 
         if(isGameOver)
         {
-            alert("Game Over!");
+            this.modalBuilder.buildModal();
         }
     }
 }

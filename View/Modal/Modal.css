@@ -9,9 +9,15 @@
 
     background-color: gray;
 
+    width: 30em;
+    height: 40em;
+
     position: fixed;
-    top: 50%;
     left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .restart-button
@@ -20,8 +26,15 @@
     align-items: center;
     justify-content: center;
 
-    border: solid 1px black;
+
+    background-color: black;
+
+    color: white;
+
+    border: solid 1px white;
     border-radius: 20px;
+
+    cursor: pointer;
 
     padding: 2em;
 }

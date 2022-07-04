@@ -11,6 +11,10 @@ class ModalBuilder
         restartButton.classList.add("restart-button");
         restartButton.textContent = "Restart";
 
+        restartButton.addEventListener("click", () => {
+            window.location.reload();
+        })
+
         div.appendChild(paragraph);
         div.appendChild(restartButton);
 

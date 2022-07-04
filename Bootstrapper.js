@@ -13,7 +13,7 @@ class Bootstrapper
         let modalBuilder = new ModalBuilder();
 
         let getBoardController = new GetBoardController(board);
-        let checkWinController = new WinCheckController(board, boardWinValidator);
+        let checkWinController = new WinCheckController(board, boardWinValidator, modalBuilder);
         
         let boardBuilder = new BoardBuilder(cellBuilder, makeMoveController, getBoardController, checkWinController);
         
