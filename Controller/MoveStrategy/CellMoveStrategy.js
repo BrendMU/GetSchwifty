@@ -4,12 +4,15 @@ class CellMoveStrategy
     {
         for(let i = 0; i < board.size; i++)
         {
-            let emptyCellIndex = board.board[i].indexOf(0);
+            let emptyCell = board.board[i].find((cell) => cell.number === 0);
+            let emptyCellIndex = board.board[i].indexOf(emptyCell);
 
-            if(emptyCellIndex >= 0)
+            if(emptyCell)
             {
-                board.board[row][column], board.board[i][emptyCellIndex] = board.board[i][emptyCellIndex], board.board[row][column];
-                return board;
+                let temp = board.board[row][column];
+                board.board[row][column] = board.board[i][emptyCellIndex]; 
+                board.board[i][emptyCellIndex] = temp;
+                return board.board;
             }
         }
 

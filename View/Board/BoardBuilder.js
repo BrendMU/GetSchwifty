@@ -1,17 +1,13 @@
 class BoardBuilder
 {
-    constructor(cellBuilder, makeMoveController)
+    constructor(cellBuilder, makeMoveContoller)
     {
         this.cellBuilder = cellBuilder;
+        this.makeMoveContoller = makeMoveContoller;
     }
 
     buildBoard(board)
     {
-        const clickFunction = () =>
-        {
-            console.log("Clicked");
-        };
-
         let boardDiv = document.createElement("div");
         boardDiv.classList.add("board");
         boardDiv.style.gridTemplateColumns = `repeat(${board.size}, 1fr)`;
@@ -26,12 +22,13 @@ class BoardBuilder
                 (j - 1 > 0 && board.board[i][j - 1].number === 0) || 
                 (j + 1 < board.size && board.board[i][j + 1].number) === 0;
                 
-                let cell = this.cellBuilder.buildCell(board.board[i][j].content, isAdjancentToEmptyCell && clickFunction);
+                let cell = this.cellBuilder.buildCell(board.board[i][j].content, isAdjancentToEmptyCell && (() => this.makeMoveContoller.makeMove(i, j)));
                 boardDiv.appendChild(cell);
             }
         }
 
         let boardWrapper = document.getElementsByClassName("board-wrapper")[0];
+        boardWrapper.innerHTML = "";
         boardWrapper.appendChild(boardDiv);
     }
 }

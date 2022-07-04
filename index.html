@@ -20,13 +20,15 @@
 <script src="./Controller/BoardFactory/BoardFactory.js"></script>
 <script src="./Controller/Cell/Cell.js"></script>
 <script src="./Controller/CellFactory/CellFactory.js"></script>
-<script src="./Controller/Controllers/GetBoardController.js"></script>
+<script src="./Controller/MoveStrategy/CellMoveStrategy.js"></script>
+<script src="./Controller/Controllers/MakeMoveController.js"></script>
+<script src="./Controller/Controllers/GenerateBoardController.js"></script>
 <script src="./View/Board/BoardBuilder.js"></script>
 <script src="./View/Cell/CellBuilder.js"></script>
 <script src="./Bootstrapper.js"></script>
 <script>
     window.addEventListener("load", () => {
-        controllers.getBoardController.getBoard(3);
+        controllers.generateBoardController.getBoard(3);
     });
 </script>
 </html>
