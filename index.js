@@ -20,3 +20,8 @@ function startGame()
 
     window.location.href = `./View/Pages/Game/Game.html?size=${sizeInput.value}&name=${nameInput.value}`;
 }
+
+function showTopScores()
+{
+    window.location.href = `./View/Pages/Scores/Scores.html`;
+}

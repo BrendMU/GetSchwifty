@@ -13,9 +13,21 @@ class ScoreBuilder
         {
             let scoreDiv = document.createElement("div");
             scoreDiv.classList.add("score");
+            
+            if(scores[0] === score)
+            {
+                for(let key in score)
+                {
+                    let span = document.createElement("span");
+                    span.textContent = key;
+                    scoreDiv.appendChild(span);
+                }
+            }
 
             for(let key in score)
             {
+                
+
                 let span = document.createElement("span");
                 span.textContent = score[key];
                 scoreDiv.appendChild(span);

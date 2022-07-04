@@ -12,7 +12,7 @@ class WinCheckController
     checkWin()
     {
         let isGameOver = this.boardWinValidator.checkWin();
-        console.log(this.score);
+
         if(isGameOver)
         {
             this.scoreStorage.add(this.score);

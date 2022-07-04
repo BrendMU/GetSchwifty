@@ -35,5 +35,17 @@ class Bootstrapper
     }
 }
 
-let bootstrapper = new Bootstrapper();
-let controllers = bootstrapper.BootstrapControllers();
+class Controllers
+{
+    getControllers()
+    {
+        let bootstrapper = new Bootstrapper();
+
+        if(!this.controllers)
+        {
+            this.controllers = bootstrapper.BootstrapControllers();
+        }
+
+        return this.controllers;
+    }    
+}
