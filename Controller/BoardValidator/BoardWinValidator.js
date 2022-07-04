@@ -17,9 +17,9 @@ class BoardWinValidator
         for(let i = 1; i < orderedNumbers.length - 2; i++)
         {
             if(orderedNumbers[i - 1].number + 1 !== orderedNumbers[i].number)
-                return true;
+                return false;
         }
 
-        return false;
+        return true;
     }
 }

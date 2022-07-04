@@ -7,9 +7,14 @@ class Bootstrapper
         let moveStrategy = new CellMoveStrategy();
         let makeMoveController = new MakeMoveController(board, moveStrategy);
 
+        let boardWinValidator = new BoardWinValidator(board);
+
         let cellBuilder = new CellBuilder();
-        let getBoardController = new GetBoardController(board); 
-        let boardBuilder = new BoardBuilder(cellBuilder, makeMoveController, getBoardController);
+
+        let getBoardController = new GetBoardController(board);
+        let checkWinController = new WinCheckController(board, boardWinValidator);
+        
+        let boardBuilder = new BoardBuilder(cellBuilder, makeMoveController, getBoardController, checkWinController);
         
         let boardValidator = new BoardValidator();
         

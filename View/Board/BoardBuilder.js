@@ -1,10 +1,11 @@
 class BoardBuilder
 {
-    constructor(cellBuilder, makeMoveContoller, getBoardController)
+    constructor(cellBuilder, makeMoveContoller, getBoardController, checkWinController)
     {
         this.cellBuilder = cellBuilder;
         this.makeMoveContoller = makeMoveContoller;
         this.getBoardController = getBoardController;
+        this.checkWinController = checkWinController;
     }
 
     buildBoard(board)
@@ -13,6 +14,7 @@ class BoardBuilder
         {
             this.makeMoveContoller.makeMove(i, j);
             this.getBoardController.getBoard(this);
+            this.checkWinController.checkWin();
         };
 
         let boardDiv = document.createElement("div");
