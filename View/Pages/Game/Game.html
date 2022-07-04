@@ -29,12 +29,5 @@
 <script src="../../Cell/CellBuilder.js"></script>
 <script src="../../Modal/ModalBuilder.js"></script>
 <script src="../../../Bootstrapper.js"></script>
-<script>
-    window.addEventListener("load", () => {
-        const urlSearchParams = new URLSearchParams(window.location.search);
-        const params = Object.fromEntries(urlSearchParams.entries());
-
-        controllers.generateBoardController.getBoard(params.size);
-});
-</script>
+<script src="./Game.js"></script>
 </html>
