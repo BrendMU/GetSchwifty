@@ -22,6 +22,10 @@ class BoardBuilder
         boardDiv.style.gridTemplateColumns = `repeat(${board.size}, 1fr)`;
         boardDiv.style.gridTemplateRows = `repeat(${board.size}, 1fr)`;
 
+        let boardWrapper = document.createElement("div");
+        boardWrapper.classList.add("board-wrapper");
+        boardWrapper.appendChild(boardDiv);
+
         for(let i = 0; i < board.size; i++)
         {
             for(let j = 0; j < board.size; j++)
@@ -36,8 +40,7 @@ class BoardBuilder
             }
         }
 
-        let boardWrapper = document.getElementsByClassName("board-wrapper")[0];
-        boardWrapper.innerHTML = "";
-        boardWrapper.appendChild(boardDiv);
+        document.body.innerHTML = "";
+        document.body.appendChild(boardWrapper);
     }
 }
